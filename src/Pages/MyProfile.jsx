@@ -52,7 +52,7 @@ const MyProfile = () => {
 
     return (
         <SpinnerLoader>
-            <div>
+            <div className='grid lg:grid-cols-2 grid-cols-1 '>
 
                 <div className='place-items-center  py-10 '>
                     <div className="flex flex-col justify-center max-w-xs p-6 shadow-md rounded-xl sm:px-12 dark:bg-gray-50 dark:text-gray-800">
