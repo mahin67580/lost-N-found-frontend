@@ -8,6 +8,9 @@ import Register from "../Authentication/Register";
 import Login from "../Authentication/Login";
 import Privateroute from "../private/Privateroute";
 import MyProfile from "../Pages/MyProfile";
+import AddItems from "../Pages/AddItems";
+import AllItems from "../Pages/AllItems";
+import Details from "../Pages/Details";
 
 export const router = createBrowserRouter([
     {
@@ -27,10 +30,29 @@ export const router = createBrowserRouter([
                 Component: Login
             },
             {
+                path: "/LostFoundItemsPage",
+                Component: AllItems
+            },
+            {
                 path: '/myprofile',
                 element:
                     (<Privateroute>
                         <MyProfile></MyProfile>
+                    </Privateroute>)
+            },
+            {
+                path: '/AddItem',
+                element:
+                    (<Privateroute>
+                        <AddItems></AddItems>
+                    </Privateroute>)
+            },
+            {
+                path: '/items/:id',
+                //loader: ({ params }) => fetch(`https://roommateserver-production.up.railway.app/roommates/${params.id}`),
+                element:
+                    (<Privateroute>
+                        <Details></Details>
                     </Privateroute>)
             },
         ]

@@ -52,9 +52,9 @@ const MyProfile = () => {
 
     return (
         <SpinnerLoader>
-            <div className='grid lg:grid-cols-2 grid-cols-1 '>
+            <div className='grid lg:px-72 lg:grid-cols-2 grid-cols-1 place-items-center min-h-screen'>
 
-                <div className='place-items-center  py-10 '>
+                <div className='place-items-center   py-10 '>
                     <div className="flex flex-col justify-center max-w-xs p-6 shadow-md rounded-xl sm:px-12 dark:bg-gray-50 dark:text-gray-800">
                         <img src={`${user && user.photoURL}`} alt="" className=" w-full object-cover mx-auto rounded-full dark:bg-gray-500 aspect-square" />
                         <div className="space-y-4 text-center divide-y dark:divide-gray-300">
@@ -95,7 +95,7 @@ const MyProfile = () => {
                 </div>
 
 
-                <div className='flex justify-center items-center mb-10 '>
+                <div className='flex justify-center w-full items-center mb-10 '>
                     <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
                         <div className="card-body">
                             <form onSubmit={manualUpdate} className="fieldset">

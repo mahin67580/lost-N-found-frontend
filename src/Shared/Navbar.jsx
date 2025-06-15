@@ -61,7 +61,7 @@ const Navbar = () => {
 
     const Links = <>
         <NavLink to={'/'} className={' btn    text-base-content mr-5 '}>Home</NavLink>
-        <NavLink to={'/LostFoundItemsPage'} className={'btn     text-base-content mr-5'}>Lost & Found Items Page</NavLink>
+        <NavLink to={'/LostFoundItemsPage'} className={'btn     text-base-content mr-5'}>Lost & Found Items </NavLink>
         <NavLink to={'/BrowseListing'} className={'btn  text-base-content mr-5'}>Browse Listing</NavLink>
         <NavLink to={'/MyListings'} className={'btn     text-base-content mr-5'}>My Listings</NavLink>
         {
@@ -148,9 +148,9 @@ const Navbar = () => {
 
                         {showDropdown && (
                             <div className="absolute right-0 top-14 bg-base-100 shadow-lg rounded-box p-4 z-50 w-48 space-y-2">
-                                <Link to="/AddItem" className="block   p-2 rounded btn  text-base-content">Add Item </Link>
-                                <Link to="/RecoveredItems" className="block  btn  text-base-content p-2 rounded">Recovered Items </Link>
-                                <Link to="/MyItems" className="block btn  text-base-content  p-2 rounded">My Items </Link>
+                                <NavLink to="/AddItem" className="block   p-2 rounded btn  text-base-content">Add Item </NavLink>
+                                <NavLink to="/RecoveredItems" className="block  btn  text-base-content p-2 rounded">Recovered Items </NavLink>
+                                <NavLink to="/MyItems" className="block btn  text-base-content  p-2 rounded">My Items </NavLink>
                             </div>
                         )}
                     </div>
