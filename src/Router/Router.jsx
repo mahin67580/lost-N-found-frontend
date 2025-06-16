@@ -11,6 +11,7 @@ import MyProfile from "../Pages/MyProfile";
 import AddItems from "../Pages/AddItems";
 import AllItems from "../Pages/AllItems";
 import Details from "../Pages/Details";
+import MyItems from "../Pages/MyItems";
 
 export const router = createBrowserRouter([
     {
@@ -45,6 +46,13 @@ export const router = createBrowserRouter([
                 element:
                     (<Privateroute>
                         <AddItems></AddItems>
+                    </Privateroute>)
+            },
+            {
+                path: '/myItems',
+                element:
+                    (<Privateroute>
+                        <MyItems></MyItems>
                     </Privateroute>)
             },
             {

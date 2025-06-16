@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import DatePicker from 'react-datepicker';
 import Swal from 'sweetalert2';
 import axios from 'axios';
@@ -6,6 +6,10 @@ import 'react-datepicker/dist/react-datepicker.css';
 import { AuthContext } from '../Provider/AuthContext'; // Adjust if needed
 
 const AddItems = () => {
+    useEffect(() => {
+        document.title = 'Add Item';
+        window.scrollTo(0, 0);
+    }, []);
     const { user } = useContext(AuthContext);
 
     const [formData, setFormData] = useState({
@@ -46,7 +50,7 @@ const AddItems = () => {
         // console.log(itemData);
 
         try {
-            const response = await axios.post('http://localhost:3000/items', itemData); 
+            const response = await axios.post('http://localhost:3000/items', itemData);
 
             if (response.status === 200 || response.status === 201) {
                 Swal.fire({
@@ -138,11 +142,11 @@ const AddItems = () => {
                 {/* Contact Info */}
                 <div>
                     <label className="block font-semibold mb-1">Contact Name</label>
-                    <input type="text" value={formData.contactName} name="contactName" readOnly className="input input-bordered w-full bg-gray-100" />
+                    <input type="text" value={formData.contactName} name="contactName" readOnly className="input input-bordered w-full  " />
                 </div>
                 <div>
                     <label className="block font-semibold mb-1">Contact Email</label>
-                    <input type="email" value={formData.contactEmail} name="contactEmail" readOnly className="input input-bordered w-full bg-gray-100" />
+                    <input type="email" value={formData.contactEmail} name="contactEmail" readOnly className="input input-bordered w-full  " />
                 </div>
 
                 {/* Submit */}

@@ -24,6 +24,8 @@ const Details = () => {
                 setIsRecovered(res.data.status === 'recovered');
             })
             .catch(err => console.error('Error fetching item:', err));
+        document.title = 'Details';
+        window.scrollTo(0, 0);
     }, [id]);
 
     const handleRecoverSubmit = async () => {
@@ -62,7 +64,7 @@ const Details = () => {
     return (
         <div className="max-w-3xl mx-auto mt-10 p-6 bg-base-100 shadow-lg rounded-box">
             <h2 className="text-3xl font-bold text-primary mb-4">{item.title}</h2>
-            <img src={item.thumbnail} alt={item.title} className="w-full h-64 object-cover rounded-md mb-4" />
+            <img src={item.thumbnail} alt={item.title} className="w-full h-64 object-contain rounded-md mb-4" />
             <p><strong>Description:</strong> {item.description}</p>
             <p><strong>Type:</strong> {item.postType}</p>
             <p><strong>Category:</strong> {item.category}</p>

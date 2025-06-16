@@ -11,6 +11,8 @@ const AllItems = () => {
         axios.get('http://localhost:3000/items')
             .then(res => setItems(res.data))
             .catch(err => console.error('Error fetching items:', err));
+        document.title = 'All Items';
+        window.scrollTo(0, 0);
     }, []);
 
     return (
