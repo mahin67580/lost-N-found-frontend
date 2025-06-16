@@ -31,7 +31,7 @@ const MyItems = () => {
         fetchItems();
         document.title = 'My-items';
         window.scrollTo(0, 0);
-    }, [user?.email]);
+    },  );
 
     // Delete item
     const handleDelete = async (id) => {
