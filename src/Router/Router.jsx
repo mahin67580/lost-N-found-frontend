@@ -12,6 +12,8 @@ import AddItems from "../Pages/AddItems";
 import AllItems from "../Pages/AllItems";
 import Details from "../Pages/Details";
 import MyItems from "../Pages/MyItems";
+import RecoveredItems from "../Pages/RecoveredItems";
+import Errorpage from "../Components/Errorpage";
 
 export const router = createBrowserRouter([
     {
@@ -56,6 +58,13 @@ export const router = createBrowserRouter([
                     </Privateroute>)
             },
             {
+                path: '/allRecovered',
+                element:
+                    (<Privateroute>
+                        <RecoveredItems></RecoveredItems>
+                    </Privateroute>)
+            },
+            {
                 path: '/items/:id',
                 //loader: ({ params }) => fetch(`https://roommateserver-production.up.railway.app/roommates/${params.id}`),
                 element:
@@ -65,4 +74,8 @@ export const router = createBrowserRouter([
             },
         ]
     },
+    {
+        path: "*",
+        element: <Errorpage />
+    }
 ]);

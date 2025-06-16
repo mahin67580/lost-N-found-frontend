@@ -36,6 +36,8 @@ const Details = () => {
             }
 
             const recoveryInfo = {
+                title: item.title,
+                category: item.category,
                 itemId: item._id,
                 recoveredLocation,
                 recoveredDate,

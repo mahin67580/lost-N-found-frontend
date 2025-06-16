@@ -149,7 +149,7 @@ const Navbar = () => {
                         {showDropdown && (
                             <div className="absolute right-0 top-14 bg-base-100 shadow-lg rounded-box p-4 z-50 w-48 space-y-2">
                                 <NavLink to="/AddItem" className="block   p-2 rounded btn  text-base-content">Add Item </NavLink>
-                                <NavLink to="/RecoveredItems" className="block  btn  text-base-content p-2 rounded">Recovered Items </NavLink>
+                                <NavLink to="/allRecovered" className="block  btn  text-base-content p-2 rounded">Recovered Items </NavLink>
                                 <NavLink to="/myItems" className="block btn  text-base-content  p-2 rounded">My Items </NavLink>
                             </div>
                         )}

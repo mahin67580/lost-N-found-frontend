@@ -27,11 +27,11 @@ const MyItems = () => {
     };
 
     useEffect(() => {
-
-        fetchItems();
         document.title = 'My-items';
         window.scrollTo(0, 0);
-    },  );
+        fetchItems();
+
+    },[]);
 
     // Delete item
     const handleDelete = async (id) => {
@@ -66,7 +66,7 @@ const MyItems = () => {
 
 
     return (
-        <div className="container mx-auto px-4 py-8 min-h-screen">
+        <div className="container mx-auto px-4 py-8  min-h-screen">
             <h2 className="text-2xl font-bold mb-6 text-center text-primary">My Items</h2>
 
             {loading ? (
