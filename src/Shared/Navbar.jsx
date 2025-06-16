@@ -62,14 +62,14 @@ const Navbar = () => {
     const Links = <>
         <NavLink to={'/'} className={' btn    text-base-content mr-5 '}>Home</NavLink>
         {/* <NavLink to={'/LostFoundItemsPage'} className={'btn     text-base-content mr-5'}>Lost & Found Items </NavLink> */}
-        <NavLink to={'/BrowseListing'} className={'btn  text-base-content mr-5'}>Browse Listing</NavLink>
-        <NavLink to={'/myItems'} className={'btn     text-base-content mr-5'}>My Items</NavLink>
+        {/* <NavLink to={'/BrowseListing'} className={'btn  text-base-content mr-5'}>Browse Listing</NavLink> */}
+        {/* <NavLink to={'/myItems'} className={'btn     text-base-content mr-5'}>My Items</NavLink> */}
         {
             user ? (<NavLink to={'/myprofile'} className="btn     text-base-content mr-5 "> My profile </NavLink  >) : ''
         }
         <button
             onClick={toggleTheme}
-            className="btn btn-sm btn-primary ml-5 mt-1 " data-tooltip-id="my-tooltip-2"
+            className="btn btn-sm btn-primary   mt-1 " data-tooltip-id="my-tooltip-2"
         >
             Toggle {theme === 'light' ? '🌙' : '☀️'}
         </button>
@@ -150,7 +150,7 @@ const Navbar = () => {
                             <div className="absolute right-0 top-14 bg-base-100 shadow-lg rounded-box p-4 z-50 w-48 space-y-2">
                                 <NavLink to="/AddItem" className="block   p-2 rounded btn  text-base-content">Add Item </NavLink>
                                 <NavLink to="/RecoveredItems" className="block  btn  text-base-content p-2 rounded">Recovered Items </NavLink>
-                                <NavLink to="/MyItems" className="block btn  text-base-content  p-2 rounded">My Items </NavLink>
+                                <NavLink to="/myItems" className="block btn  text-base-content  p-2 rounded">My Items </NavLink>
                             </div>
                         )}
                     </div>
