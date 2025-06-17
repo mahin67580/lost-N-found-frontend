@@ -67,7 +67,7 @@ const StatsSection = () => {
                 </div>
 
                 <div className="mt-12 text-center">
-                    <Link to={''}> <button className="btn btn-primary btn-lg">
+                    <Link to={'/AddItem'}> <button className="btn btn-primary btn-lg">
                         <MdOutlinePublishedWithChanges className="mr-2" />
                         Report an Item Now
                     </button></Link>

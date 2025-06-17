@@ -4,6 +4,8 @@ import BannerText from '../Components/BannerText';
 import Latest from './Latest';
 import FAQAccordion from '../Components/FAQAccordion';
 import StatsSection from '../Components/StatsSection';
+import FeatureSection from '../Components/FeatureSection';
+ 
 
 const Home = () => {
     useEffect(() => {
@@ -24,6 +26,10 @@ const Home = () => {
             <div>
                 <StatsSection></StatsSection>
             </div>
+            <div>
+                <FeatureSection></FeatureSection>
+            </div>
+           
             <div>
                 <FAQAccordion></FAQAccordion>
             </div>
