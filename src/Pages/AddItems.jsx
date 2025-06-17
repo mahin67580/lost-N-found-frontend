@@ -55,7 +55,7 @@ const AddItems = () => {
             const response = await axios.post('http://localhost:3000/items', itemData);
 
             if (response.status === 200 || response.status === 201) {
-                navigate('/')
+                navigate('/LostFoundItemsPage')
                 Swal.fire({
                     icon: 'success',
                     title: 'Post submitted!',
