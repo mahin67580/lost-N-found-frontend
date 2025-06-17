@@ -103,7 +103,7 @@ const Navbar = () => {
                     <div className='flex items-center'>
 
                         {
-                            <Link to={'/'}><p className="btn btn-ghost text-xl text-primary">
+                            <Link to={'/'}><p className="btn btn-ghost text-xl text-primary font-bold">
                                 WHERE<span className="text-base-content">LIST</span>
                             </p>
 
