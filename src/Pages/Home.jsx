@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import Banner from '../Components/Banner';
 import BannerText from '../Components/BannerText';
 import Latest from './Latest';
+import FAQAccordion from '../Components/FAQAccordion';
 
 const Home = () => {
     useEffect(() => {
@@ -18,6 +19,9 @@ const Home = () => {
             </div>
             <div>
                 <Latest></Latest>
+            </div>
+            <div>
+                <FAQAccordion></FAQAccordion>
             </div>
         </div>
     );
