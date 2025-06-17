@@ -4,8 +4,10 @@ import Swal from 'sweetalert2';
 import axios from 'axios';
 import 'react-datepicker/dist/react-datepicker.css';
 import { AuthContext } from '../Provider/AuthContext'; // Adjust if needed
+import { useNavigate } from 'react-router';
 
 const AddItems = () => {
+    const navigate = useNavigate()
     useEffect(() => {
         document.title = 'Add Item';
         window.scrollTo(0, 0);
@@ -53,6 +55,7 @@ const AddItems = () => {
             const response = await axios.post('http://localhost:3000/items', itemData);
 
             if (response.status === 200 || response.status === 201) {
+                navigate('/')
                 Swal.fire({
                     icon: 'success',
                     title: 'Post submitted!',
