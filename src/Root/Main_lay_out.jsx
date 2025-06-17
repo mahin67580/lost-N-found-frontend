@@ -9,7 +9,7 @@ const Main_lay_out = () => {
             <header className='sticky top-0 z-50  '>
                 <Navbar></Navbar>
             </header>
-            <main>
+            <main className='min-h-screen'>
                 <Outlet></Outlet>
             </main>
             <footer>
