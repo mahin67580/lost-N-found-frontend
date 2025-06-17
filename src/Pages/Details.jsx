@@ -16,8 +16,8 @@ const Details = () => {
     const [recoveredDate, setRecoveredDate] = useState(new Date());
     const [recoveredLocation, setRecoveredLocation] = useState('');
     const [modalOpen, setModalOpen] = useState(false);
-
-   // console.log(user.accessToken);
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    // console.log(user.accessToken);
 
     useEffect(() => {
         axios.get(`https://lost-and-found-server-nine.vercel.app/items/${id}`)
@@ -31,6 +31,7 @@ const Details = () => {
     }, [id]);
 
     const handleRecoverSubmit = async () => {
+        setIsSubmitting(true);
         try {
             if (!recoveredLocation) {
                 Swal.fire('Error', 'Please enter recovery location.', 'error');
@@ -60,6 +61,9 @@ const Details = () => {
         } catch (error) {
             console.error('Recovery failed:', error);
             Swal.fire('Error', 'Failed to mark as recovered.', 'error');
+        }
+        finally {
+            setIsSubmitting(false);
         }
     };
 
@@ -108,7 +112,23 @@ const Details = () => {
                         />
 
                         <div className="flex justify-between items-center">
-                            <button onClick={handleRecoverSubmit} className="btn btn-primary">Submit</button>
+                            <div>
+                                <button
+                                    onClick={handleRecoverSubmit}
+                                    className={`btn btn-primary px-8 ${isSubmitting ? 'opacity-75' : ''}`}
+                                    disabled={isSubmitting}
+                                >
+                                    {isSubmitting ? (
+                                        <>
+                                            <span className="loading loading-spinner loading-sm mr-2"></span>
+                                            Posting...
+                                        </>
+                                    ) : (
+                                        'Submit'
+                                    )}
+                                </button>
+                            </div>
+                            {/* <button onClick={handleRecoverSubmit} className="btn btn-primary">Submit</button> */}
                             <button onClick={() => setModalOpen(false)} className="btn btn-ghost">Cancel</button>
                         </div>
                     </div>
