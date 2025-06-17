@@ -10,7 +10,7 @@ const AllItems = () => {
     const [searchTerm, setSearchTerm] = useState('');
 
     useEffect(() => {
-        axios.get('http://localhost:3000/items')
+        axios.get('https://lost-and-found-server-nine.vercel.app/items')
             .then(res => {
                 setItems(res.data);
                 setFilteredItems(res.data); //duplicate send to Initialize filtered items with all items

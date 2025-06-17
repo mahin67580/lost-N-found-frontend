@@ -52,7 +52,7 @@ const AddItems = () => {
         // console.log(itemData);
 
         try {
-            const response = await axios.post('http://localhost:3000/items', itemData);
+            const response = await axios.post('https://lost-and-found-server-nine.vercel.app/items', itemData);
 
             if (response.status === 200 || response.status === 201) {
                 navigate('/LostFoundItemsPage')
@@ -78,7 +78,7 @@ const AddItems = () => {
                 });
             }
         } catch (error) {
-            console.error('Error posting item:', error);
+            //console.error('Error posting item:', error);
             Swal.fire({
                 icon: 'error',
                 title: 'Error',

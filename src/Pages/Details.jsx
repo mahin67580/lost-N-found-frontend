@@ -18,7 +18,7 @@ const Details = () => {
     const [modalOpen, setModalOpen] = useState(false);
 
     useEffect(() => {
-        axios.get(`http://localhost:3000/items/${id}`)
+        axios.get(`https://lost-and-found-server-nine.vercel.app/items/${id}`)
             .then(res => {
                 setItem(res.data);
                 setIsRecovered(res.data.status === 'recovered');
@@ -48,9 +48,9 @@ const Details = () => {
                 }
             };
 
-            await axios.post('http://localhost:3000/recovered', recoveryInfo);
+            await axios.post('https://lost-and-found-server-nine.vercel.app/recovered', recoveryInfo);
 
-            await axios.patch(`http://localhost:3000/items/${id}`, { status: 'recovered' });
+            await axios.patch(`https://lost-and-found-server-nine.vercel.app/items/${id}`, { status: 'recovered' });
 
             Swal.fire('Success', 'Item marked as recovered.', 'success');
             setIsRecovered(true);

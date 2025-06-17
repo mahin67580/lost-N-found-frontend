@@ -17,7 +17,7 @@ const MyItems = () => {
     // Fetch and filter items
     const fetchItems = async () => {
         try {
-            const res = await axios.get('http://localhost:3000/items');
+            const res = await axios.get('https://lost-and-found-server-nine.vercel.app/items');
             const myItems = res.data.filter(item => item.contactEmail === user?.email);
             setItems(myItems);
         } catch (error) {
@@ -46,7 +46,7 @@ const MyItems = () => {
 
         if (confirm.isConfirmed) {
             try {
-                await axios.delete(`http://localhost:3000/items/${id}`);
+                await axios.delete(`https://lost-and-found-server-nine.vercel.app/items/${id}`);
                 setItems(items.filter(item => item._id !== id));
                 Swal.fire('Deleted!', 'Your item has been removed.', 'success');
             } catch (error) {

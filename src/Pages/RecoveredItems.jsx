@@ -14,7 +14,7 @@ const RecoveredItems = () => {
         window.scrollTo(0, 0);
         const fetchRecoveredItems = async () => {
             try {
-                const res = await axios.get('http://localhost:3000/recovered');
+                const res = await axios.get('https://lost-and-found-server-nine.vercel.app/recovered');
                 const filtered = res.data.filter(item => item.recoveredBy.email === user?.email);
                 setRecoveredItems(filtered);
             } catch (error) {

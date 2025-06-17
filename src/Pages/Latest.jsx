@@ -9,7 +9,7 @@ const Latest = () => {
     useEffect(() => {
         const fetchLatestItems = async () => {
             try {
-                const res = await axios.get('http://localhost:3000/items');
+                const res = await axios.get('https://lost-and-found-server-nine.vercel.app/items');
                 const sortedItems = res.data
                     .sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp))
                     .slice(0, 6);
@@ -22,7 +22,7 @@ const Latest = () => {
         fetchLatestItems();
     }, []);
 
-    console.log(latestItems);
+    //console.log(latestItems);
     return (
         <div className="max-w-7xl mx-auto px-4 py-10">
             <h2 className="text-3xl font-bold mb-8 text-center text-primary">Latest Lost & Found Posts</h2>

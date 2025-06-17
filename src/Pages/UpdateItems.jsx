@@ -11,7 +11,7 @@ const UpdateItems = ({ isOpen, onClose, refreshData, itemId }) => {
 
     useEffect(() => {
         if (isOpen && itemId) {
-            axios.get(`http://localhost:3000/items/${itemId}`)
+            axios.get(`https://lost-and-found-server-nine.vercel.app/items/${itemId}`)
                 .then(res => setFormData({ ...res.data, date: new Date(res.data.date) }))
                 .catch(err => console.error('Error loading item:', err));
         }
@@ -36,10 +36,10 @@ const UpdateItems = ({ isOpen, onClose, refreshData, itemId }) => {
         e.preventDefault();
         //console.log(formData);
         const { _id, ...updateData } = formData;
-        console.log(updateData);
+       // console.log(updateData);
         try {
 
-            await axios.patch(`http://localhost:3000/items/${itemId}`, updateData);
+            await axios.patch(`https://lost-and-found-server-nine.vercel.app/items/${itemId}`, updateData);
             Swal.fire({
                 icon: 'success',
                 title: 'Item Updated',
