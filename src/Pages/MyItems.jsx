@@ -3,6 +3,7 @@ import axios from 'axios';
 import Swal from 'sweetalert2';
 import { AuthContext } from '../Provider/AuthContext';
 import UpdateItems from './UpdateItems';
+import SpinnerLoader from '../Components/SpinnerLoader';
 // import { Link } from 'react-router';
 
 
@@ -31,7 +32,7 @@ const MyItems = () => {
         window.scrollTo(0, 0);
         fetchItems();
 
-    },[]);
+    }, []);
 
     // Delete item
     const handleDelete = async (id) => {
@@ -66,68 +67,71 @@ const MyItems = () => {
 
 
     return (
+
         <div className="container mx-auto px-4 py-8  min-h-screen">
-            <h2 className="text-2xl font-bold mb-6 text-center text-primary">My Items</h2>
+            <SpinnerLoader>
+                <h2 className="text-2xl font-bold mb-6 text-center text-primary">My Items</h2>
 
-            {loading ? (
-                <p className="text-center text-gray-500">Loading...</p>
-            ) : items.length === 0 ? (
-                <div className="text-center text-gray-500">
-                    <p>You haven't posted any items yet.</p>
-                </div>
-            ) : (
-                <div className="overflow-x-auto">
-                    <table className="table w-full bg-base-100 shadow-md border border-base-300">
-                        <thead className="bg-base-200">
-                            <tr>
-                                <th>Title</th>
-                                <th>Category</th>
-                                <th>Status</th>
-                                <th>Date</th>
-                                <th className="text-center">Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {items.map(item => (
-                                <tr key={item._id}>
-                                    <td>{item.title}</td>
-                                    <td>{item.category}</td>
-                                    <td>
-                                        <span
-                                            className={`badge ${item.status === 'recovered' ? 'badge-success' : 'badge-warning'
-                                                }`}
-                                        >
-                                            {item.status || 'pending'}
-                                        </span>
-                                    </td>
-                                    <td>{new Date(item.date).toLocaleDateString()}</td>
-
-                                    <td className="flex gap-2 justify-center">
-                                        <button onClick={() => handleUpdateClick(item._id)} className="btn btn-sm btn-warning">
-                                            Update
-                                        </button>
-
-                                        <button
-                                            onClick={() => handleDelete(item._id)}
-                                            className="btn btn-sm btn-outline btn-error"
-                                        >
-                                            Delete
-                                        </button>
-                                    </td>
+                {loading ? (
+                    <p className="text-center text-gray-500">Loading...</p>
+                ) : items.length === 0 ? (
+                    <div className="text-center text-gray-500">
+                        <p>You haven't posted any items yet.</p>
+                    </div>
+                ) : (
+                    <div className="overflow-x-auto">
+                        <table className="table w-full bg-base-100 shadow-md border border-base-300">
+                            <thead className="bg-base-200">
+                                <tr>
+                                    <th>Title</th>
+                                    <th>Category</th>
+                                    <th>Status</th>
+                                    <th>Date</th>
+                                    <th className="text-center">Actions</th>
                                 </tr>
-                            ))}
-                        </tbody>
-                    </table>
-                </div>
-            )}
-            {isModalOpen && selectedId && (
-                <UpdateItems
-                    isOpen={isModalOpen}
-                    onClose={() => setIsModalOpen(false)}
-                    refreshData={fetchItems}
-                    itemId={selectedId}
-                />
-            )}
+                            </thead>
+                            <tbody>
+                                {items.map(item => (
+                                    <tr key={item._id}>
+                                        <td>{item.title}</td>
+                                        <td>{item.category}</td>
+                                        <td>
+                                            <span
+                                                className={`badge ${item.status === 'recovered' ? 'badge-success' : 'badge-warning'
+                                                    }`}
+                                            >
+                                                {item.status || 'pending'}
+                                            </span>
+                                        </td>
+                                        <td>{new Date(item.date).toLocaleDateString()}</td>
+
+                                        <td className="flex gap-2 justify-center">
+                                            <button onClick={() => handleUpdateClick(item._id)} className="btn btn-sm btn-warning">
+                                                Update
+                                            </button>
+
+                                            <button
+                                                onClick={() => handleDelete(item._id)}
+                                                className="btn btn-sm btn-outline btn-error"
+                                            >
+                                                Delete
+                                            </button>
+                                        </td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    </div>
+                )}
+                {isModalOpen && selectedId && (
+                    <UpdateItems
+                        isOpen={isModalOpen}
+                        onClose={() => setIsModalOpen(false)}
+                        refreshData={fetchItems}
+                        itemId={selectedId}
+                    />
+                )}
+            </SpinnerLoader>
         </div>
     );
 };
