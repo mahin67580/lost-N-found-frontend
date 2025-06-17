@@ -3,6 +3,7 @@ import Banner from '../Components/Banner';
 import BannerText from '../Components/BannerText';
 import Latest from './Latest';
 import FAQAccordion from '../Components/FAQAccordion';
+import StatsSection from '../Components/StatsSection';
 
 const Home = () => {
     useEffect(() => {
@@ -21,8 +22,12 @@ const Home = () => {
                 <Latest></Latest>
             </div>
             <div>
+                <StatsSection></StatsSection>
+            </div>
+            <div>
                 <FAQAccordion></FAQAccordion>
             </div>
+
         </div>
     );
 };

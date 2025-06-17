@@ -60,14 +60,7 @@ const FAQAccordion = () => {
                     ))}
                 </div>
 
-                <div className="text-center mt-10">
-                    <p className="text-base-content opacity-80">
-                        Still have questions? {' '}
-                        <a href="/contact" className="link link-primary hover:underline">
-                            Contact our support team
-                        </a>
-                    </p>
-                </div>
+                
             </div>
         </div>
     );
