@@ -1,6 +1,7 @@
 @import "tailwindcss";
 @plugin "daisyui" ;
 @import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap');
 .active
 {
 color:blue;
@@ -9,4 +10,12 @@ color:blue;
 body{
     font-family: "Urbanist", sans-serif;
   font-optical-sizing: auto;
+  
+ 
+}
+
+.bannerfont 
+{
+    font-family: "Berkshire Swash";
+    
 }

@@ -4,24 +4,36 @@ import Swal from 'sweetalert2';
 import { AuthContext } from '../Provider/AuthContext';
 import UpdateItems from './UpdateItems';
 import SpinnerLoader from '../Components/SpinnerLoader';
-// import { Link } from 'react-router';
-
 
 const MyItems = () => {
-    const [isModalOpen, setIsModalOpen] = useState();
+    const [isModalOpen, setIsModalOpen] = useState(false);
     const [selectedId, setSelectedId] = useState(null);
     const { user } = useContext(AuthContext);
     const [items, setItems] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
 
-    // Fetch and filter items
+    // Fetch items
     const fetchItems = async () => {
+        setLoading(true);
+        setError(null);
+
         try {
-            const res = await axios.get('https://lost-and-found-server-nine.vercel.app/items');
-            const myItems = res.data.filter(item => item.contactEmail === user?.email);
-            setItems(myItems);
+            const config = {
+                headers: {
+                    authorization: `Bearer ${user?.accessToken}`
+                }
+            };
+
+            // Only add email parameter if you want filtered results
+            const url = `https://lost-and-found-server-nine.vercel.app/items${user?.email ? `?email=${user.email}` : ''}`;
+
+            const res = await axios.get(url, config);
+            setItems(res.data);
         } catch (error) {
             console.error('Failed to fetch items:', error);
+            setError('Failed to load items. Please try again.');
+            Swal.fire('Error', 'Failed to load items', 'error');
         } finally {
             setLoading(false);
         }
@@ -31,8 +43,7 @@ const MyItems = () => {
         document.title = 'My-items';
         window.scrollTo(0, 0);
         fetchItems();
-
-    }, []);
+    }, [user]); // Add user to dependency array
 
     // Delete item
     const handleDelete = async (id) => {
@@ -55,7 +66,6 @@ const MyItems = () => {
             }
         }
     };
-
     //update item
     const handleUpdateClick = (id) => {
         setSelectedId(id);
@@ -64,19 +74,18 @@ const MyItems = () => {
         // console.log('should be true:', isModalOpen);
 
     };
-
-
     return (
-
-        <div className="container mx-auto px-4 py-8  min-h-screen">
+        <div className="container mx-auto px-4 py-8 min-h-screen">
             <SpinnerLoader>
                 <h2 className="text-2xl font-bold mb-6 text-center text-primary">My Items</h2>
 
-                {loading ? (
+                {error ? (
+                    <div className="text-center text-error">{error}</div>
+                ) : loading ? (
                     <p className="text-center text-gray-500">Loading...</p>
                 ) : items.length === 0 ? (
                     <div className="text-center text-gray-500">
-                        <p>You haven't posted any items yet.</p>
+                        <p>No items found.</p>
                     </div>
                 ) : (
                     <div className="overflow-x-auto">
@@ -123,6 +132,7 @@ const MyItems = () => {
                         </table>
                     </div>
                 )}
+
                 {isModalOpen && selectedId && (
                     <UpdateItems
                         isOpen={isModalOpen}

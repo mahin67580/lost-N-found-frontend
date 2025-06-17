@@ -17,6 +17,8 @@ const Details = () => {
     const [recoveredLocation, setRecoveredLocation] = useState('');
     const [modalOpen, setModalOpen] = useState(false);
 
+   // console.log(user.accessToken);
+
     useEffect(() => {
         axios.get(`https://lost-and-found-server-nine.vercel.app/items/${id}`)
             .then(res => {

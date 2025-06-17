@@ -46,6 +46,7 @@ const AuthProvider = ({ children }) => {
         const unsbscribe = onAuthStateChanged(auth, (CurrentUser) => {
             setUser(CurrentUser);
             setLoading(false)
+            console.log("user" ,CurrentUser);
 
         });
         return () => {
