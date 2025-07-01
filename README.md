@@ -1,5 +1,4 @@
-# 📦 WhereIsIt - A Lost & Found Items Web App
-
+# 📦 WhereIsIt - (A Lost & Found Items Web App)
  
 ### 🔗 Live Site
 
