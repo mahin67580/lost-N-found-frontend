@@ -5,7 +5,9 @@ import Latest from './Latest';
 import FAQAccordion from '../Components/FAQAccordion';
 import StatsSection from '../Components/StatsSection';
 import FeatureSection from '../Components/FeatureSection';
- 
+import HowItWorks from '../Components/HowItWorks';
+import HeroSpotlight from '../Components/HeroSpotlight';
+
 
 const Home = () => {
     useEffect(() => {
@@ -13,23 +15,25 @@ const Home = () => {
         window.scrollTo(0, 0);
     }, []);
     return (
-        <div className='min-h-screen relative '>
+        <div className='min-h-screen px-4  '>
             <div>
                 <Banner></Banner>
             </div>
-            <div className=' absolute top-[130px] left-[55px] lg:top-[500px] lg:left-[200px] w-9/12 '>
+            {/* <div className=' absolute top-[130px] left-[55px] lg:top-[500px] lg:left-[200px] w-9/12 '>
                 <BannerText></BannerText>
-            </div>
+            </div> */}
             <div>
                 <Latest></Latest>
             </div>
+
             <div>
                 <StatsSection></StatsSection>
             </div>
+            <HeroSpotlight></HeroSpotlight>
             <div>
                 <FeatureSection></FeatureSection>
             </div>
-           
+
             <div>
                 <FAQAccordion></FAQAccordion>
             </div>

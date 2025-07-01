@@ -14,6 +14,8 @@ import Details from "../Pages/Details";
 import MyItems from "../Pages/MyItems";
 import RecoveredItems from "../Pages/RecoveredItems";
 import Errorpage from "../Components/Errorpage";
+import HowItWorks from "../Components/HowItWorks";
+import SuccessStories from "../Components/SuccessStories";
 
 export const router = createBrowserRouter([
     {
@@ -35,6 +37,14 @@ export const router = createBrowserRouter([
             {
                 path: "/LostFoundItemsPage",
                 Component: AllItems
+            },
+            {
+                path: "/SuccessStories",
+                Component: SuccessStories
+            },
+            {
+                path: "/howitworks",
+                Component: HowItWorks
             },
             {
                 path: '/myprofile',

@@ -31,7 +31,7 @@ const Navbar = () => {
     }, [theme]);
 
     const toggleTheme = () => {
-        setTheme(prev => (prev === 'light' ? 'dark' : 'light'));
+        setTheme(prev => (prev === 'dark' ? 'light' : 'dark'));
     };
 
     const { user, logout } = use(AuthContext)
@@ -62,6 +62,8 @@ const Navbar = () => {
     const Links = <>
         <NavLink to={'/'} className={' btn    text-base-content mr-5 '}>Home</NavLink>
         <NavLink to={'/LostFoundItemsPage'} className={'btn     text-base-content mr-5'}>Lost & Found Items </NavLink>
+        <NavLink to={'/howitworks'} className={'btn     text-base-content mr-5'}>How It Works </NavLink>
+        <NavLink to={'/SuccessStories'} className={'btn     text-base-content mr-5'}>SuccessStories </NavLink>
         {/* <NavLink to={'/BrowseListing'} className={'btn  text-base-content mr-5'}>Browse Listing</NavLink> */}
         {/* <NavLink to={'/myItems'} className={'btn     text-base-content mr-5'}>My Items</NavLink> */}
         {
