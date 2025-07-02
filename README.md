@@ -75,25 +75,4 @@ Fully responsive across:
 
 Tested using multiple screen sizes to ensure visual consistency and usability.
 
-## 📝 Assignment Requirements Checklist
-
-✅ 15+ meaningful client commits  
-✅ 8+ meaningful server commits  
-✅ README with live links, purpose, packages  
-✅ Responsive design & attractive layout  
-✅ Firebase & MongoDB secured  
-✅ JWT authentication implemented  
-✅ Framer motion used  (Reconnect With What Matters section)
-✅ Extra 2 Section added
-✅ Lost & Found management with recovery flow  
-✅ All CRUD actions   
-✅ Dynamic titles, spinner, 404  
-✅ Search feature  
-✅ Layout toggle in recovered items page  
-✅ No reload redirect issues  
-✅ Full deployment with no errors  
-✅ Many More
----
-
- 
  
