@@ -119,7 +119,7 @@ const SuccessStories = () => {
     };
 
     return (
-        <div className="bg-white dark:bg-gray-900 py-16 px-4">
+        <div className="    py-16 px-4">
             <div className="max-w-6xl mx-auto">
                 <motion.div
                     initial={{ opacity: 0, y: -20 }}
@@ -127,8 +127,8 @@ const SuccessStories = () => {
                     transition={{ duration: 0.5 }}
                     className="text-center mb-16"
                 >
-                    <h2 className="text-4xl font-bold text-gray-800 dark:text-white mb-4">Happy Reunions</h2>
-                    <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+                    <h2 className="text-4xl font-bold mb-4">Happy Reunions</h2>
+                    <p className="text-lg   max-w-2xl mx-auto">
                         See how we've helped people recover their precious belongings
                     </p>
                 </motion.div>
@@ -195,7 +195,7 @@ const SuccessStories = () => {
 
                 {/* Story Submission Form Modal */}
                 {isFormOpen && (
-                    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
+                    <div className="fixed inset-0   flex items-center justify-center p-4 z-50">
                         <motion.div
                             initial={{ opacity: 0, scale: 0.9 }}
                             animate={{ opacity: 1, scale: 1 }}

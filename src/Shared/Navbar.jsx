@@ -31,7 +31,7 @@ const Navbar = () => {
     }, [theme]);
 
     const toggleTheme = () => {
-        setTheme(prev => (prev === 'dark' ? 'light' : 'dark'));
+        setTheme(prev => (prev === 'light' ? 'dark' : 'light'));
     };
 
     const { user, logout } = use(AuthContext)
