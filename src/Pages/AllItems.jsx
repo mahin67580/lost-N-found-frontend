@@ -8,6 +8,10 @@ import { AuthContext } from '../Provider/AuthContext';
 
 
 const AllItems = () => {
+    useEffect(() => {
+        document.title = 'All Items';
+        window.scrollTo(0, 0);
+    }, []);
 
     const [items, setItems] = useState([]);
     const [filteredItems, setFilteredItems] = useState([]);

@@ -1,7 +1,12 @@
 import { FaSearch, FaPlusCircle, FaBell, FaCheckCircle } from 'react-icons/fa';
 import { motion } from 'framer-motion';
+import { useEffect } from 'react';
 
 const HowItWorks = () => {
+   useEffect(() => {
+          document.title = 'WorkFlow';
+          window.scrollTo(0, 0);
+      }, []);
   const steps = [
     {
       icon: <FaSearch className="text-3xl text-blue-500" />,
