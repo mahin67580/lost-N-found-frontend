@@ -37,6 +37,10 @@ const DEFAULT_STORIES = [
 ];
 
 const SuccessStories = () => {
+    useEffect(() => {
+            document.title = 'SuccessStories';
+            window.scrollTo(0, 0);
+        }, []);
     const { user } = use(AuthContext);
     const [storiesData, setStoriesData] = useState(() => {
         // Initialize with either localStorage data or default stories
