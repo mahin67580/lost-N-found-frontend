@@ -60,7 +60,7 @@ const Footer = () => {
                         </div>
                     </nav>
                     <aside>
-                        <p>Copyright © {new Date().getFullYear()} - All right reserved PH Jhankar vai . Ltd</p>
+                        <p>Copyright © {new Date().getFullYear()} - All right reserved by afjal hossain</p>
                     </aside>
 
 

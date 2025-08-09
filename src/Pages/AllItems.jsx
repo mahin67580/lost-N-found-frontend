@@ -119,7 +119,7 @@ const AllItems = () => {
     }
 
     return (
-        <div className="max-w-7xl mx-auto px-4 py-10">
+        <div className="  px-4 py-10  ">
             <h2 className="text-3xl font-bold text-center text-primary mb-8">All Lost & Found Items</h2>
 
             {/* Search Input */}
@@ -139,9 +139,9 @@ const AllItems = () => {
             </div>
 
             {/* Items Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1     sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
                 {filteredItems.map(item => (
-                    <div key={item._id} className="card bg-base-100 shadow-md hover:shadow-xl transition-shadow">
+                    <div key={item._id} className="card border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary bg-base-100  shadow-md hover:shadow-xl transition-shadow">
                         <figure className="px-4 pt-4">
                             <img
                                 src={item.thumbnail || 'https://placehold.co/400x300?text=No+Image'}

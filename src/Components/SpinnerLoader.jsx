@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import LottieLoader from "./LottieLoader";
 
 const SpinnerLoader = ({ children }) => {
   const [showLoader, setShowLoader] = useState(true);
@@ -6,7 +7,7 @@ const SpinnerLoader = ({ children }) => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowLoader(false);
-    }, 600); // 1 second delay
+    }, 2000); // 1 second delay
 
     return () => clearTimeout(timer);
   }, []);
@@ -14,7 +15,8 @@ const SpinnerLoader = ({ children }) => {
   if (showLoader) {
     return (
       <div className='min-h-screen flex justify-center items-center'>
-        <span className="loading loading-bars loading-xl text-blue-600"></span>
+        {/* <span className="loading loading-bars loading-xl text-blue-600"></span> */}
+        <LottieLoader></LottieLoader>
       </div>
     );
   }

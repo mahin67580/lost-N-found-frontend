@@ -2,25 +2,26 @@ import React, { useEffect, useState } from 'react';
 
 const images = [
     {
-        url: "https://www.247software.com/hubfs/lost-and-found-software.png",
-        text: "Find Your Perfect Roommate Match",
-        subtext: "Compatibility beyond just location"
+        url: "https://images.pexels.com/photos/7869720/pexels-photo-7869720.jpeg?_gl=1*1sd4qri*_ga*ODkxNjUxMTU2LjE3NDY5NTU4MzY.*_ga_8JE65Q40S6*czE3NTQ3MTQ2OTckbzUkZzEkdDE3NTQ3MTUxMTkkajM0JGwwJGgw",
+        text: "Find What You’ve Lost",
+        subtext: "Easily search and claim lost items"
     },
     {
         url: "https://media.istockphoto.com/id/1166427273/photo/letter-block-in-word-lost-found-on-wood-background.jpg?s=612x612&w=0&k=20&c=_McjNoxNkewJ6sLYcQN07ovI9CtbkxCe8NYZ5GB6rkA=",
-        text: "Shared Living Made Easy",
-        subtext: "Connect with like-minded roommates"
+        text: "Report Found Items",
+        subtext: "Help return belongings to their owners"
     },
     {
-        url: "https://cdn.create.vista.com/api/media/small/395812212/stock-photo-side-view-brunette-student-denim-shirt-books-backpack-holding-loudspeaker",
-        text: "Your Next Home Awaits",
-        subtext: "Discover your ideal living situation"
+        url: "https://images.pexels.com/photos/859895/pexels-photo-859895.jpeg?_gl=1*1i2pm6d*_ga*ODkxNjUxMTU2LjE3NDY5NTU4MzY.*_ga_8JE65Q40S6*czE3NTQ3MTQ2OTckbzUkZzEkdDE3NTQ3MTUxMzIkajIxJGwwJGgw",
+        text: "Spread the Word",
+        subtext: "Post alerts to reach more people"
     },
     {
-        url: "https://t3.ftcdn.net/jpg/03/13/09/10/360_F_313091018_iMzn3eoJzYUFOSHMVMau41AuNiWfswAQ.jpg",
-        text: "Safe & Verified Connections",
-        subtext: "Trusted roommate matching platform"
+        url: "https://cdn.pixabay.com/photo/2024/04/05/06/35/ai-generated-8676653_1280.jpg",
+        text: "Safe & Verified Listings",
+        subtext: "Trusted community-driven platform"
     }
+
 ];
 
 const Banner = () => {
@@ -35,17 +36,17 @@ const Banner = () => {
     }, []);
 
     return (
-        <div className="relative w-10/12 h-[50vh] max-h-[700px] min-h-[300px] overflow-hidden mx-auto  rounded-xl">
-            <div 
+        <div className="mt-10 relative w-11/12 h-[60vh] max-h-[700px] min-h-[300px] overflow-hidden mx-auto  rounded-xl">
+            <div
                 className="flex transition-transform duration-1000 ease-in-out h-full  "
                 style={{ transform: `translateX(-${currentIndex * 100}%)` }}
             >
                 {images.map((image, index) => (
                     <div key={index} className="w-full flex-shrink-0 relative h-full">
-                        <img 
-                            src={image.url} 
+                        <img
+                            src={image.url}
                             className="w-full h-full object-cover brightness-75"
-                            alt={`slide-${index}`} 
+                            alt={`slide-${index}`}
                         />
                         <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
                             <div className="  backdrop-blur-2xl   p-6 rounded-xl max-w-4xl mx-auto">
@@ -55,13 +56,13 @@ const Banner = () => {
                                 <p className="text-xl md:text-2xl text-white opacity-90 drop-shadow-md">
                                     {image.subtext}
                                 </p>
-                            
+
                             </div>
                         </div>
                     </div>
                 ))}
             </div>
-            
+
             {/* Navigation dots */}
             <div className="absolute bottom-8 left-0 right-0 flex justify-center gap-2">
                 {images.map((_, index) => (

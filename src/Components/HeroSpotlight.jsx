@@ -114,7 +114,7 @@ const HeroSpotlight = () => {
               </div>
 
               {/* Action Buttons */}
-              <div className="flex justify-between">
+              {/* <div className="flex justify-between">
                 <button className="flex items-center text-black  hover:text-red-500 transition-colors">
                   <FaHeart className="mr-1" />
                   <span className="text-xs">Appreciate</span>
@@ -127,7 +127,7 @@ const HeroSpotlight = () => {
                   <FaRegComment className="mr-1" />
                   <span className="text-xs">Comment</span>
                 </button>
-              </div>
+              </div> */}
             </motion.div>
           ))}
         </div>

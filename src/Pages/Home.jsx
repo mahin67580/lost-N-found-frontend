@@ -7,6 +7,8 @@ import StatsSection from '../Components/StatsSection';
 import FeatureSection from '../Components/FeatureSection';
 import HowItWorks from '../Components/HowItWorks';
 import HeroSpotlight from '../Components/HeroSpotlight';
+import SpinnerLoader from '../Components/SpinnerLoader';
+import Newsletter from '../Components/Newsletter';
 
 
 const Home = () => {
@@ -16,28 +18,32 @@ const Home = () => {
     }, []);
     return (
         <div className='min-h-screen px-4  '>
-            <div>
-                <Banner></Banner>
-            </div>
-            {/* <div className=' absolute top-[130px] left-[55px] lg:top-[500px] lg:left-[200px] w-9/12 '>
+            <SpinnerLoader>
+
+
+
+                <div>
+                    <Banner></Banner>
+                </div>
+                {/* <div className=' absolute top-[130px] left-[55px] lg:top-[500px] lg:left-[200px] w-9/12 '>
                 <BannerText></BannerText>
             </div> */}
-            <div>
-                <Latest></Latest>
-            </div>
+                <div>
+                    <Latest></Latest>
+                </div>
 
-            <div>
-                <StatsSection></StatsSection>
-            </div>
-            <HeroSpotlight></HeroSpotlight>
-            <div>
-                <FeatureSection></FeatureSection>
-            </div>
-
-            <div>
-                <FAQAccordion></FAQAccordion>
-            </div>
-
+                <div>
+                    <StatsSection></StatsSection>
+                </div>
+                <HeroSpotlight></HeroSpotlight>
+                <div>
+                    <FeatureSection></FeatureSection>
+                </div>
+<Newsletter></Newsletter>
+                <div>
+                    <FAQAccordion></FAQAccordion>
+                </div>
+            </SpinnerLoader>
         </div>
     );
 };
