@@ -7,6 +7,7 @@ import 'react-datepicker/dist/react-datepicker.css';
 import { AuthContext } from '../Provider/AuthContext';
 import { useParams } from 'react-router';
 import Loading from '../Components/Loading';
+import { div } from 'framer-motion/client';
 
 const Details = () => {
     const { id } = useParams();
@@ -70,24 +71,46 @@ const Details = () => {
     if (!item) return <div><Loading></Loading></div>;
 
     return (
-        <div className="max-w-3xl mx-auto mt-10 p-6 bg-base-100 shadow-lg rounded-box">
-            <h2 className="text-3xl font-bold text-primary mb-4">{item.title}</h2>
-            <img src={item.thumbnail} alt={item.title} className="w-full h-64 object-contain rounded-md mb-4" />
-            <p><strong>Description:</strong> {item.description}</p>
-            <p><strong>Type:</strong> {item.postType}</p>
-            <p><strong>Category:</strong> {item.category}</p>
-            <p><strong>Location:</strong> {item.location}</p>
-            <p><strong>Date:</strong> {new Date(item.date).toLocaleDateString()}</p>
-            <p><strong>Posted By:</strong> {item.contactName} ({item.contactEmail})</p>
+        <div className="min-h-screen m-10 p-6 bg-base-100 shadow-lg rounded-box"
+            style={{
+                backgroundImage: `url(${item.thumbnail})`,
+                backgroundRepeat: 'no-repeat',
+                backgroundSize: 'cover',    // optional: cover entire div
+                backgroundPosition: 'center'
+            }} >
+          <h2 
+  className="text-3xl font-bold text-primary mb-4 text-center mx-auto w-xl 
+             backdrop-blur-xl bg-white bg-opacity-40 px-4 py-2 rounded-lg shadow-md"
+>
+  {item.title}
+</h2>
+            <div className='flex flex-col lg:flex-row justify-center gap-7 items-center'>
+                <div className=' '>
+                    <img src={item.thumbnail} alt={item.title} className="w-full border-2   h-96 object-contain rounded-md  " />
+                </div>
+                <div className='backdrop-blur-3xl p-5 text-black text-2xl'>
+                    <p><strong>Posted By:</strong> {item.contactName} ({item.contactEmail})</p>
+                    <p><strong>Description:</strong> {item.description}</p>
+                    <p><strong>Category:</strong> {item.category}</p>
+                    <p><strong>Date:</strong> {new Date(item.date).toLocaleDateString()}</p>
+                    <p><strong>Location:</strong> {item.location}</p>
+                    <p><strong>Type:</strong> {item.postType}</p>
+                </div>
+            </div>
+
+
 
             {!isRecovered && user && (
-                <button onClick={() => setModalOpen(true)} className="btn btn-primary mt-6">
-                    {item.postType === 'Lost' ? 'Found This!' : 'This is Mine!'}
-                </button>
+                <div className='flex justify-center'>
+                    <button onClick={() => setModalOpen(true)} className="btn btn-primary mt-6   ">
+                        {item.postType === 'Lost' ? 'Found This!' : 'This is Mine!'}
+                    </button>
+                </div>
+
             )}
 
             {isRecovered && (
-                <p className="text-success font-semibold mt-4">This item has already been recovered.</p>
+                <p className="text-success font-semibold mt-4 text-center backdrop-blur-xl   mx-auto w-xl p-5">This item has already been recovered.</p>
             )}
 
             {/* Modal */}

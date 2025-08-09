@@ -39,7 +39,7 @@ const Home = () => {
                 <div>
                     <FeatureSection></FeatureSection>
                 </div>
-<Newsletter></Newsletter>
+                <Newsletter></Newsletter>
                 <div>
                     <FAQAccordion></FAQAccordion>
                 </div>
