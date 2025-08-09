@@ -79,16 +79,16 @@ const Details = () => {
                 backgroundPosition: 'center'
             }} >
           <h2 
-  className="text-3xl font-bold text-primary mb-4 text-center mx-auto w-xl 
+  className="lg:text-3xl text-xl font-bold text-primary mb-4 text-center mx-auto lg:w-xl 
              backdrop-blur-xl bg-white bg-opacity-40 px-4 py-2 rounded-lg shadow-md"
 >
   {item.title}
 </h2>
             <div className='flex flex-col lg:flex-row justify-center gap-7 items-center'>
                 <div className=' '>
-                    <img src={item.thumbnail} alt={item.title} className="w-full border-2   h-96 object-contain rounded-md  " />
+                    <img src={item.thumbnail} alt={item.title} className="w-full border-2   h-96 object- rounded-md  " />
                 </div>
-                <div className='backdrop-blur-3xl p-5 text-black text-2xl'>
+                <div className='backdrop-blur-3xl p-5 text-black lg:text-2xl'>
                     <p><strong>Posted By:</strong> {item.contactName} ({item.contactEmail})</p>
                     <p><strong>Description:</strong> {item.description}</p>
                     <p><strong>Category:</strong> {item.category}</p>
@@ -110,7 +110,7 @@ const Details = () => {
             )}
 
             {isRecovered && (
-                <p className="text-success font-semibold mt-4 text-center backdrop-blur-xl   mx-auto w-xl p-5">This item has already been recovered.</p>
+                <p className="text-success font-semibold mt-4 text-center backdrop-blur-xl   mx-auto lg:w-xl p-5">This item has already been recovered.</p>
             )}
 
             {/* Modal */}
