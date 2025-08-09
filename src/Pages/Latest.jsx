@@ -13,7 +13,7 @@ const Latest = () => {
                 const res = await axios.get('https://lost-and-found-server-nine.vercel.app/items');
                 const sortedItems = res.data
                     .sort((a, b) => new Date(a.timestamp) - new Date(b.timestamp))
-                    .slice(0, 8);
+                    .slice(0, 10);
                 setLatestItems(sortedItems);
                 setIsSubmitting(false);
             } catch (error) {
@@ -63,7 +63,7 @@ const Latest = () => {
 
     return (
         <motion.div 
-            className="max-w-7xl mx-auto px-4 py-10"
+            className="  px-4 py-10"
             initial="hidden"
             animate="visible"
             variants={containerVariants}
@@ -89,7 +89,7 @@ const Latest = () => {
                     </motion.div>
                 ) : (
                     <motion.div 
-                        className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4"
+                        className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-5 "
                         variants={containerVariants}
                     >
                         {latestItems.map((item) => (
