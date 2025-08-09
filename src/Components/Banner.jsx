@@ -36,7 +36,7 @@ const Banner = () => {
     }, []);
 
     return (
-        <div className="mt-10 relative w-11/12 h-[60vh] max-h-[700px] min-h-[300px] overflow-hidden mx-auto  rounded-xl">
+        <div className="mt-10 relative w-12/12 h-[60vh] max-h-[700px] min-h-[300px] overflow-hidden mx-auto  rounded-xl">
             <div
                 className="flex transition-transform duration-1000 ease-in-out h-full  "
                 style={{ transform: `translateX(-${currentIndex * 100}%)` }}

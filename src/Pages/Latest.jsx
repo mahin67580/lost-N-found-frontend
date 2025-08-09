@@ -63,7 +63,7 @@ const Latest = () => {
 
     return (
         <motion.div 
-            className="  px-4 py-10"
+            className="   py-10"
             initial="hidden"
             animate="visible"
             variants={containerVariants}
